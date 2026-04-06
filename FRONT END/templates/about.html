@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - DDoS Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <style>
+        body {
+            color: white; /* Set text color to white */
+            background-color: #343a40; /* Dark background for better contrast */
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: white; /* Navbar links in white */
+        }
+
+        .navbar-brand {
+            color: white; /* Navbar brand in white */
+        }
+
+        .card {
+            background-color: #495057; /* Darker background for the card */
+            color: white; /* Ensure the card text is white */
+        }
+
+        .card-title,
+        .feature-title,
+        .feature-description,
+        .lead {
+            color: white; /* Ensure all the titles and descriptions are in white */
+        }
+
+        .progress-bar {
+            background-color: #3498db; /* Blue color for progress bars */
+        }
+
+        .footer {
+            background-color: #23272b; /* Dark footer */
+        }
+
+        .footer a {
+            color: white; /* Footer links in white */
+        }
+
+        .list-unstyled li {
+            color: white; /* Ensures the list items are white */
+        }
+
+        .container {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        h1, h4, p {
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">DDoS Detection</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('upload') }}">Upload</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('algo') }}">Algo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('predict') }}">Predict</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 animate__animated animate__fadeIn">
+        <h1 class="text-center display-5">About the Project</h1>
+        <div class="card shadow-lg p-4 mt-4">
+            <p class="lead">This project implements a hybrid machine learning framework combining Random Forest and Support Vector Machines (SVM) for advanced DDoS detection in Software-Defined Networks (SDN).</p>
+            <p>We designed this system to accurately detect DDoS attacks by analyzing network traffic patterns. The hybrid approach leverages the strengths of both Random Forest and SVM for improved accuracy and reduced false positives. The system can quickly identify abnormal traffic and help mitigate attacks in real-time.</p>
+            <p>The detection process is powered by a dual-plane architecture where both control plane and data plane traffic are analyzed separately to identify different types of DDoS threats. This enables the system to detect volumetric attacks, flooding, and anomalies within network operations.</p>
+            <h4>Key Features:</h4>
+            <ul class="list-unstyled">
+                <li>✅ Hybrid Machine Learning Framework combining SVM and Random Forest for robust detection</li>
+                <li>✅ Real-Time DDoS Detection - Identifies and mitigates attacks as they happen</li>
+                <li>✅ Dual-Plane Traffic Analysis - Analyzes both control and data plane traffic for a comprehensive view</li>
+                <li>✅ User-Friendly Interface - Easy-to-navigate web interface for dataset upload, model training, and predictions</li>
+                <li>✅ Scalability - Designed to handle large-scale network infrastructures efficiently</li>
+            </ul>
+            <p>This system uses SelectKBest for feature selection, StandardScaler for data normalization, and LabelEncoder for encoding categorical variables to prepare the data for machine learning. The model is trained on historical network traffic data, and the system predicts whether incoming traffic is normal or an anomaly.</p>
+            <p>With a web-based interface built using Flask and styled with Bootstrap, users can easily upload datasets, view model accuracy, and make predictions on live traffic data. The backend is powered by MySQL, ensuring fast and secure data storage.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

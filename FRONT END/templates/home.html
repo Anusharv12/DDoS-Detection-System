@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - DDoS Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">DDoS Detection</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('upload') }}">Upload</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('algo') }}">Algo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('predict') }}">Predict</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5 text-center">
+        <h1 class="display-4 animate__animated animate__bounceIn">Welcome to DDoS Detection</h1>
+        <p class="lead">Our Hybrid Random Forest DDoS Detection System is designed to provide cutting-edge protection against DDoS attacks. With our advanced machine learning algorithms, we ensure that your network is safeguarded from harmful traffic.</p>
+        <p>Our system uses Hybrid Random Forest models that combine the strengths of multiple classifiers for high detection accuracy and real-time threat identification. Whether you're a developer or a network administrator, our tool provides an intuitive interface for easy detection and prevention of DDoS attacks.</p>
+        <p class="lead mt-3">Explore the system and understand how machine learning is revolutionizing network security!</p>
+        <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg mt-3">Get Started</a>
+    </div>
+    <div class="container mt-5 text-center">
+        <h2>Why Choose Our DDoS Detection System?</h2>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">⚡ Real-time Detection - Identify and mitigate DDoS attacks in real-time.</li>
+            <li class="list-group-item">⚡ Hybrid Random Forest Algorithm - Combines multiple classifiers for improved accuracy.</li>
+            <li class="list-group-item">⚡ Easy to Use - A user-friendly interface for seamless interaction.</li>
+            <li class="list-group-item">⚡ Scalable and Secure - Designed to protect large networks from complex attacks.</li>
+        </ul>
+        <p class="mt-4">Start using our tool today and experience better network security with state-of-the-art detection methods!</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

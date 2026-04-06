@@ -1,0 +1,7 @@
+Col1,Col2,Col3,Col4,Col5,Col6,Col7,Protocol,Label
+1,166,1,0,0,SF,1,,
+0,0,1,195,1,0,0,REJ,normal
+0,0,1,77,1,0,0,SF,normal
+1,1,0.1,6,0.02,1,1,S0,anomaly
+1,1,0.04,5,0.02,1,1,S0,anomaly
+0,0,1,255,1,0,0,SF,anomaly

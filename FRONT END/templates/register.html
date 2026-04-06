@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - DDoS Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Background image and full-page styling */
+        body {
+            background-image: url('static/image.jpg'); /* Ensure 'static/image.jpg' is the correct path */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Ensure the background covers the full screen */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; /* Remove default body margin */
+        }
+
+        .container {
+            /* This ensures the container takes the full viewport height for perfect centering */
+            height: 100vh; 
+        }
+
+        .card {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 0.5rem; /* Matches the rounded-3 class in Bootstrap */
+        }
+
+        .bg-card {
+            /* Optional: makes the card background slightly transparent white */
+            background-color: rgba(255, 255, 255, 0.9); 
+        }
+
+        /* Adjusting for Bootstrap primary color look */
+        .text-primary {
+            color: #007bff !important; 
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="card shadow-lg p-5 bg-card">
+            <h2 class="text-center mb-4 text-primary">Register</h2>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <form id="registerForm" method="POST">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="phone" name="phone" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </form>
+            <p class="text-center mt-3">Already have an account? <a href="{{ url_for('login') }}" class="text-primary">Login</a></p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
